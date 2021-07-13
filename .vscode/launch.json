@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-WebtierApplication<webtier>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cedarlogic.webtier.WebtierApplication",
+            "projectName": "webtier",
+            "args": ""
+        }
+    ]
+}

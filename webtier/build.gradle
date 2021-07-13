@@ -1,0 +1,51 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.cedarlogic'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('azureVersion', "3.6.1")
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.2'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.2'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-resource-server
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server:2.5.2'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.2'
+	// https://mvnrepository.com/artifact/com.azure.spring/azure-spring-boot-starter
+	implementation 'com.azure.spring:azure-spring-boot-starter:3.6.1'
+	// https://mvnrepository.com/artifact/com.azure.spring/azure-spring-boot-starter-active-directory
+	implementation 'com.azure.spring:azure-spring-boot-starter-active-directory:3.6.1'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+	developmentOnly	 'org.springframework.boot:spring-boot-devtools:2.5.2'
+
+	runtimeOnly 'com.h2database:h2:1.4.200'
+	
+	// https://mvnrepository.com/artifact/com.h2database/h2
+	testImplementation 'com.h2database:h2:1.4.200'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.2'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "com.azure.spring:azure-spring-boot-bom:${azureVersion}"
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
