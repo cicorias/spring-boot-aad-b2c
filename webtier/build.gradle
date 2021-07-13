@@ -13,25 +13,30 @@ repositories {
 }
 
 ext {
-	set('azureVersion', "3.6.1")
+	set('azureVersion', "3.6.0")
 }
 
 dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.2'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.2'
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest:2.5.2'
+
+
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-resource-server
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server:2.5.2'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.2'
 	// https://mvnrepository.com/artifact/com.azure.spring/azure-spring-boot-starter
-	implementation 'com.azure.spring:azure-spring-boot-starter:3.6.1'
+	implementation 'com.azure.spring:azure-spring-boot-starter'
 	// https://mvnrepository.com/artifact/com.azure.spring/azure-spring-boot-starter-active-directory
-	implementation 'com.azure.spring:azure-spring-boot-starter-active-directory:3.6.1'
+	implementation 'com.azure.spring:azure-spring-boot-starter-active-directory'
 
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
 	developmentOnly	 'org.springframework.boot:spring-boot-devtools:2.5.2'
+
+	
 
 	runtimeOnly 'com.h2database:h2:1.4.200'
 	
